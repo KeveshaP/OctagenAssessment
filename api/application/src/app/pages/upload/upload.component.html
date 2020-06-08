@@ -1,0 +1,19 @@
+<mat-toolbar class="justify-content-md-center">
+  <span>Hi You are on the Upload Page</span>
+</mat-toolbar>
+<br />
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-10">
+      <div class="example-container">
+        <input type="file" (change)="onChange($event.target.files)">
+      </div>
+    </div>
+    <div class="col-auto">
+      <button mat-fab color="primary" (click)="back()">
+        <mat-icon>check-circle</mat-icon>
+      </button>
+    </div>
+  </div>
+  <br />
+</div>

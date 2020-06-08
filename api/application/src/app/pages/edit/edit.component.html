@@ -1,0 +1,100 @@
+<mat-toolbar class="justify-content-md-center" *ngIf="editData">
+  <span>Hi You are on the edit page for contact {{editData.firstname}} {{editData.surname}}</span>
+</mat-toolbar>
+<br />
+<div class="container" *ngIf="editData">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+    </div>
+    <div class="col-md-auto">
+      <div class="example-container">
+        <mat-form-field hintLabel="Max 200 characters" appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput #firstname [(ngModel)]="editData.firstname" maxlength="200" placeholder="Ex. Nougat">
+          <mat-hint align="end">{{firstname.value?.length || 0}}/200</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col col-lg-2">
+    </div>
+  </div>
+  <br />
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+    </div>
+    <div class="col-md-auto">
+      <div class="example-container">
+        <mat-form-field hintLabel="Max 200 characters" appearance="fill">
+          <mat-label>Surname</mat-label>
+          <input matInput #surname [(ngModel)]="editData.surname" maxlength="200" placeholder="Ex. Brownie">
+          <mat-hint align="end">{{surname.value?.length || 0}}/200</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col col-lg-2">
+    </div>
+  </div>
+  <br />
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+    </div>
+    <div class="col-md-auto">
+      <div class="example-container">
+        <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+          <mat-label>Mobile</mat-label>
+          <input matInput #mobile maxlength="10" [(ngModel)]="editData.mobile" placeholder="0712345678">
+          <mat-hint align="end">{{mobile.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col col-lg-2">
+    </div>
+  </div>
+  <br />
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+    </div>
+    <div class="col-md-auto">
+      <div class="example-container">
+        <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+          <mat-label>Home</mat-label>
+          <input matInput #home maxlength="10" [(ngModel)]="editData.home" placeholder="0112345678">
+          <mat-hint align="end">{{home.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col col-lg-2">
+    </div>
+  </div>
+  <br />
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+    </div>
+    <div class="col-md-auto">
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="pat@example.com" [(ngModel)]="editData.email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col col-lg-2">
+    </div>
+  </div>
+  <br />
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+    </div>
+    <div class="col-md-auto">
+      <div class="example-button-container">
+        <button mat-fab color="primary" (click)="save()" aria-label="Example icon button with a delete icon">
+          <mat-icon>save</mat-icon>
+        </button>&nbsp;&nbsp; <button mat-fab color="primary" (click)="cancel()"
+          aria-label="Example icon button with a delete icon">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="col col-lg-2">
+    </div>
+  </div>
+</div>
